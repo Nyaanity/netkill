@@ -47,7 +47,7 @@ def main():
 
 
 if __name__ == "__main__":
-    pauseDelay = float(input("Pause delay in FLOAT, e.g. 1.23 (seconds to wait after every kill): "))
-    killDuration = float(input("Kill duration in FLOAT, e.g. 1.23 (seconds the kill will be performed): "))
-    packetSize = int(input("Packet size (bytes per packet, default 40000): "))
+    pauseDelay = float(input("Pause delay (seconds to wait after every kill): "))
+    killDuration = float(input("Kill duration (seconds the kill will be performed): "))
+    packetSize = float(input("Packet size (bytes per packet, default 40000): "))
     main()
