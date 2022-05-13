@@ -35,8 +35,8 @@ def main():
         for switch in switches:
             switch.state = States.PAUSED
 
-        print("pause")
         system("cls" if name == "nt" else "clear")
+        print("pause")
         sleep(pauseDelay)
         system("cls" if name == "nt" else "clear")
         print("kill")
