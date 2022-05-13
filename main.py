@@ -37,17 +37,17 @@ def main():
 
         print("pause")
         system("cls" if name == "nt" else "clear")
-        sleep(10)
+        sleep(pauseDelay)
         system("cls" if name == "nt" else "clear")
         print("kill")
 
         for switch in switches:
             switch.state = States.KILLING
-        sleep(10)
+        sleep(killDuration)
 
 
 if __name__ == "__main__":
     pauseDelay = float(input("Pause delay (seconds to wait after every kill): "))
     killDuration = float(input("Kill duration (seconds the kill will be performed): "))
-    packetSize = float(input("Packet size (bytes per packet, default 40000): "))
+    packetSize = int(input("Packet size (bytes per packet, default 40000): ") or 40000)
     main()
